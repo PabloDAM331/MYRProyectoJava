@@ -1,24 +1,30 @@
 import java.awt.Color;
-import java.util.ArrayList;
 
-public class GestorColores extends Color {
-    ArrayList<Color> colores=new ArrayList<Color>();
-    Color color_background = Color.BLACK;
+public enum GestorColores {
+    NEGRO_OSCURO(15, 56, 15),
+    VERDE_OSCURO(48, 98, 48),
+    VERDE_CLARO(139, 172, 15),
+    BLANCO_MUY_CLARO(155, 188, 15),
+    MARRON_OSCURO(40, 40, 8),
+    MARRON_MEDIO(88, 70, 0),
+    MARRON_CLARO(138, 98, 22),
+    BEIGE(181, 148, 49),
+    GRIS_OSCURO(33, 33, 33),
+    GRIS_MEDIO(85, 85, 85),
+    GRIS_CLARO(170, 170, 170),
+    AZUL_OSCURO(29, 43, 83),
+    AZUL_MEDIO(66, 116, 165),
+    AZUL_CLARO(102, 191, 255),
+    ROJO_OSCURO(115, 28, 28),
+    ROJO_MEDIO(187, 53, 59),
 
-    public void addColores(){
-        colores.add(color_background);
+    private final Color color;
 
-
+    GestorColores(int r, int g, int b) {
+        this.color = new Color(r, g, b);
     }
 
-    public GestorColores(int rgb1, int rgb2, int rgb3, ArrayList<Color> colores) {
-        super(rgb1, rgb2, rgb3);
-        this.colores=colores;
-
+    public Color getColor() {
+        return color;
     }
-    public GestorColores(){
-        super(0,0,0);
-    }
-
-
 }
